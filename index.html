@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script> 
+
+function computerPlay() {  
+let random = Math.floor(Math.random()*3);
+
+if (random==1) { 
+    return "rock";
+}
+
+else if (random==2) {
+return "paper";
+}
+
+else { 
+    return "scissor";
+}
+} 
+
+function playRound(playerSelection, computerSelection) { 
+
+    if (playerSelection == "rock" && computerSelection == "scissor") { 
+        return "You win, rock beats paper";
+    }
+    else if (playerSelection == "rock" && computerSelection == "paper") { 
+        return "You loose, paper beats rock";
+    } 
+
+    else if (playerSelection == "rock" && computerSelection == "rock") { 
+        return "Tie";
+    } 
+
+    else if (playerSelection == "paper" && computerSelection == "scissor") { 
+        return "You loose, scissor beats paper";
+    } 
+
+    else if (playerSelection == "paper" && computerSelection == "paper") { 
+        return "Tie";
+    } 
+
+    else if (playerSelection == "paper" && computerSelection == "rock") { 
+        return "You win, paper beats rock";
+    } 
+
+    else if (playerSelection == "scissor" && computerSelection == "scissor") { 
+        return "Tie";
+    } 
+
+    else if (playerSelection == "scissor" && computerSelection == "rock") { 
+        return "You loose, rock beats scissor";
+    } 
+
+    else if (playerSelection == "scissor" && computerSelection == "paper") { 
+        return "You win, scissor beats paper";
+    } 
+
+}
+
+function game() { 
+
+let object = prompt("what is your object?");
+let computerSelection = computerPlay();
+let result = playRound(object.toLowerCase(),computerSelection); 
+var playerScore = 0;
+var computerScore = 0;
+alert(result);
+score();
+alert("Score is" + " " + playerScore + "-" + (computerScore));
+object = prompt("Round 2");
+
+result = playRound(object.toLowerCase(),computerSelection); 
+alert(result);
+score();
+alert("Score is" + " " + playerScore + "-" + (computerScore));
+
+object = prompt("Round 3");
+result = playRound(object.toLowerCase(),computerSelection); 
+alert(result);
+score();
+alert("Score is" + " " + playerScore + "-" + (computerScore));
+
+object = prompt("Round 4");
+result = playRound(object.toLowerCase(),computerSelection); 
+alert(result);
+score();
+alert("Score is" + " " + playerScore + "-" + (computerScore));
+
+object = prompt("Round 5");
+result = playRound(object.toLowerCase(),computerSelection); 
+alert(result);
+score();
+alert("Score is" + " " + playerScore + "-" + (computerScore));
+
+if (playerScore > computerScore){ 
+    alert("End Game, You Win!!!")
+}
+else if (playerScore == computerScore) { 
+    alert("Well, well, that was")
+}
+else (
+    alert ("End Game, You Loose :(")
+)
+
+
+function score() {
+
+
+if (result ==  "You win, scissor beats paper"||result == "You win, paper beats rock"||result == "You win, rock beats paper")  { 
+    playerScore = playerScore + 1;
+    
+
+}
+
+else if (result == "You loose, rock beats scissor"||result == "You loose, scissor beats paper"|| result == "You loose, paper beats rock") {  
+
+    computerScore = computerScore + 1;
+
+}
+
+else { 
+    return("More Luck Next Time!");
+}
+} 
+}
+
+</script>
+</html>
