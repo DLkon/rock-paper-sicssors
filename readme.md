@@ -1,1 +1,1 @@
-This is my first game make it Java Script, please en
+This is my first game make it Java Script, please enjoy it!

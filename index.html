@@ -5,9 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+   <link rel="stylesheet" href="style.css"> 
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet"> 
+    
 </head>
 <body>
     
+    <div id="container"></div>
+    <div id="box"> 
+    <button id="rock">Rock</button>
+    <button id="paper">Paper</button>
+    <button id="scissor">Scissor</button>
+</div>
+
+
 </body>
 <script> 
 
@@ -66,72 +79,61 @@ function playRound(playerSelection, computerSelection) {
 
 }
 
-function game() { 
-
-let object = prompt("what is your object?");
-let computerSelection = computerPlay();
-let result = playRound(object.toLowerCase(),computerSelection); 
-var playerScore = 0;
-var computerScore = 0;
-alert(result);
-score();
-alert("Score is" + " " + playerScore + "-" + (computerScore));
-object = prompt("Round 2");
-
-result = playRound(object.toLowerCase(),computerSelection); 
-alert(result);
-score();
-alert("Score is" + " " + playerScore + "-" + (computerScore));
-
-object = prompt("Round 3");
-result = playRound(object.toLowerCase(),computerSelection); 
-alert(result);
-score();
-alert("Score is" + " " + playerScore + "-" + (computerScore));
-
-object = prompt("Round 4");
-result = playRound(object.toLowerCase(),computerSelection); 
-alert(result);
-score();
-alert("Score is" + " " + playerScore + "-" + (computerScore));
-
-object = prompt("Round 5");
-result = playRound(object.toLowerCase(),computerSelection); 
-alert(result);
-score();
-alert("Score is" + " " + playerScore + "-" + (computerScore));
-
-if (playerScore > computerScore){ 
-    alert("End Game, You Win!!!")
-}
-else if (playerScore == computerScore) { 
-    alert("Well, well, that was")
-}
-else (
-    alert ("End Game, You Loose :(")
-)
-
-
 function score() {
 
+if (computerScore >= 5 || playerScore >= 5) { 
+    return;
+}
 
-if (result ==  "You win, scissor beats paper"||result == "You win, paper beats rock"||result == "You win, rock beats paper")  { 
-    playerScore = playerScore + 1;
-    
+else if (result ==  "You win, scissor beats paper"||result == "You win, paper beats rock"||result == "You win, rock beats paper")  { 
 
+playerScore = playerScore + 1;    
 }
 
 else if (result == "You loose, rock beats scissor"||result == "You loose, scissor beats paper"|| result == "You loose, paper beats rock") {  
 
-    computerScore = computerScore + 1;
-
+computerScore = computerScore + 1;
 }
 
-else { 
-    return("More Luck Next Time!");
-}
+
 } 
-}
+
+var playerScore = 0;
+var computerScore = 0;
+
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach((button) => { 
+
+    button.addEventListener('click', () => { 
+         let object = button.id; 
+         let computerSelection =    computerPlay();
+         result = playRound(object.    
+         toLowerCase(),computerSelection); 
+
+         const container = document.querySelector('#container');
+         const content = document.createElement('p');
+         container.textContent = result; 
+         score();
+
+         content.textContent = "Score is" + " " + playerScore + "-" + computerScore;
+         container.appendChild(content);
+
+         
+        if (playerScore === 5) {
+            container.textContent = "You win! Congratulations."
+            container.appendChild(content);
+            
+} 
+
+        else if (computerScore === 5) { 
+            container.textContent = "Better Luck next Time :/"
+            container.appendChild(content);
+
+ }
+    });
+}); 
+
 
 </script>
 </html>

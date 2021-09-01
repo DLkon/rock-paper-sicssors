@@ -1,0 +1,60 @@
+* {     margin: 0;
+        padding: 0;
+        border: 0;
+}
+
+body {
+
+        width: 100%;
+        height: 100%;
+        background: #101010;
+        font-family: 'ZCOOL KuaiLe', cursive, sans-serif;
+        color: white;
+} 
+
+#container { 
+        font-size: 32px;
+        display: flex;
+        flex-direction: column;
+        height: 50vh;
+        justify-content: center;
+        align-items: center;
+
+
+}
+
+#container p { 
+        margin-top: 30px;
+
+}
+#box {  height: 5vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        
+}
+
+button { 
+        color: black;
+        font-size: 32px;
+        font-family: "ZCOOL Kuaile";
+        width: 254px;
+        height: 54px;
+        border-radius: 20px;
+        cursor: pointer;
+        background: linear-gradient(45deg, #354AFB, #5D30E3);
+
+}
+
+button:hover { 
+        transform: scale(1.1);
+        transition: all 0.2s;
+        color: #fff;
+}
+
+
+#paper { 
+        margin-left: 80px;
+        margin-right: 80px;
+        }
