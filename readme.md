@@ -1,1 +1,2 @@
-This is my first game make it Java Script, please enjoy it!
+# Rock Paper Scissors
+I made the first version of this game in 2021. This second version has better code quality, and use the % operator for the game logic. In the future, I hope to provide better interface.
